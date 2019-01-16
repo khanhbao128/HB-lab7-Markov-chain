@@ -64,11 +64,6 @@ def make_chains(text_string):
 def make_text(chains):
     """Return text from chains."""
 
-    words = []
-
-    # your code goes here
-
-    return " ".join(words)
 
 
 input_path = "green-eggs.txt"
