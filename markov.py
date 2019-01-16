@@ -10,8 +10,7 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
-    file = open(file_path)
-    file_in_string = file.read()
+    file_in_string = open(file_path).read()
 
 
     return file_in_string
@@ -43,11 +42,24 @@ def make_chains(text_string):
     """
 
     chains = {}
+    words = open_and_read_file(input_path)
+    words = words.split()
+  
 
-    # your code goes here
-
+    for i in range(len(words)-2):
+        key = (words[i], words[i+1]) 
+        if key in chains:
+            value_list = chains[key]
+            value_list.append(words[i+2])
+            chains[key] = value_list          
+    
+        else:
+            first_value_list = []
+            first_value_list.append(words[i+2])
+            chains[key] = first_value_list
+        
     return chains
-
+    
 
 def make_text(chains):
     """Return text from chains."""
