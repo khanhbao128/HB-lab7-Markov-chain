@@ -67,13 +67,12 @@ def make_text(chains):
     words = []
     random_key = choice(list(chains_dict))
     words.extend(list(random_key))
-    #final_string = ""
 
     while True:
         try:
             random_dict_value = choice(list(chains_dict[random_key])) 
             next_tuple = (random_key[1], random_dict_value)
-            words.append(str(next_tuple[1]))
+            words.append(random_dict_value)
             random_key = next_tuple
         except KeyError:
             break    
